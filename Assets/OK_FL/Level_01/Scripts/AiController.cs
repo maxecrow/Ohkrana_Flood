@@ -24,6 +24,8 @@ public class AiController : MonoBehaviour
     float totalDistanceToTarget;
 
     float lastTimeMoving = 0;
+
+    CheckPointManager cpm;
     
 
 
@@ -110,8 +112,17 @@ public class AiController : MonoBehaviour
 
         if(Time.time > lastTimeMoving + 4 )
         {
-            ds.rb.gameObject.transform.position = circuit.waypoints[currentTrackerWP-1].transform.position + Vector3.up *2 + new Vector3(Random.Range(-3,3),0 , Random.Range(-1,1));
-            tracker.transform.position = ds.rb.gameObject.transform.position;
+            if  (cpm == null)
+            {
+                cpm = ds.rb.GetComponent<CheckPointManager>();
+            }
+
+            ds.rb.gameObject.transform.position = cpm.lastCP.transform.position + Vector3.up * 2;
+            ds.rb.gameObject.transform.rotation = cpm.lastCP.transform.rotation;
+
+            //ds.rb.gameObject.transform.position = circuit.waypoints[currentTrackerWP-1].transform.position + Vector3.up *2 + new Vector3(Random.Range(-3,3),0 , Random.Range(-1,1));
+            //tracker.transform.position = ds.rb.gameObject.transform.position;
+            tracker.transform.position = cpm.lastCP.transform.position;
             ds.rb.gameObject.layer = 9;
             //this.GetComponent<Ghost>().enabled = true;
             Invoke("ResetLayer", 3);

@@ -41,19 +41,19 @@ namespace HoudiniEngineUnity
 	{
 		public const int HOUDINI_MAJOR			= 18;
 		public const int HOUDINI_MINOR			= 0;
-		public const int HOUDINI_BUILD			= 416;
+		public const int HOUDINI_BUILD			= 460;
 		public const int HOUDINI_PATCH			= 0;
 
-		public const string HOUDINI_VERSION_STRING = "18.0.416";
+		public const string HOUDINI_VERSION_STRING = "18.0.460";
 
 		public const int HOUDINI_ENGINE_MAJOR	= 3;
 		public const int HOUDINI_ENGINE_MINOR	= 3;
 
-		public const int HOUDINI_ENGINE_API		= 3;
+		public const int HOUDINI_ENGINE_API		= 5;
 
 		public const int UNITY_PLUGIN_VERSION	= 2;
 
-#if UNITY_EDITOR_WIN || ( UNITY_METRO && UNITY_EDITOR )
+#if UNITY_EDITOR_WIN || ( UNITY_METRO && UNITY_EDITOR ) || UNITY_STANDALONE_WIN
 
 		public const string HAPI_BIN_PATH		= "/bin";
 

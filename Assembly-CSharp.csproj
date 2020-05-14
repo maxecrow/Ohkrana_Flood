@@ -62,19 +62,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NameUIController.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\AiController.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\Alt_AI_Controller.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\AntiRollBar.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\AvoidDetector.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\BetterWheelEffects\Skidmarks.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\BetterWheelEffects\WheelSkid.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\CP_renamer\CheckPointCreator.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\CP_renamer\CheckPointCreatorEditor.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\CP_renamer\CheckPointRenamer.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\CheckPointManager.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\Circuit.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\CountDownManager.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\DisplayLeaderBoard.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\Drive.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\FlipCar.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\Ghost.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\HUD_controler.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\HoverRacer\FinishLine.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\HoverRacer\GameManager.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\HoverRacer\LapChecker.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\HoverRacer\LapTimeUI.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\HoverRacer\ShipUI.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\Leaderboard.cs" />
+    <Compile Include="Assets\OK_FL\Level_01\Scripts\NameUIController.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\PauseScreen\PauseScreen.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\PlayerController.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\RaceMonitor.cs" />

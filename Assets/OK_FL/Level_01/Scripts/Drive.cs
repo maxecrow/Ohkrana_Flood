@@ -38,9 +38,9 @@ public class Drive : MonoBehaviour
     public float maxSpeed = 200f;
 
     public GameObject playerNamePrefab;
+    public Renderer jeepMesh;
 
-
-
+    string[] aiNames = { "Adrian", "Lee", "Penny", "Merlin", "Tabytha" };
 
 
 
@@ -82,7 +82,13 @@ public class Drive : MonoBehaviour
 
         GameObject playerName = Instantiate(playerNamePrefab);
         playerName.GetComponent<NameUIController>().target = rb.gameObject.transform;
-        playerName.GetComponent<TextMeshPro>().text = "Player Name";
+
+        if (this.GetComponent<AIController>().enabled)
+            playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)];
+        else
+            playerName.GetComponent<Text>().text = "Human";
+
+        playerName.GetComponent<NameUIController>().carRend = jeepMesh;
     }
 
 

@@ -246,6 +246,7 @@ MonoBehaviour:
   _skipCookCheck: 0
   _uploadParameters: 1
   _forceUploadInputs: 0
+  _upstreamCookChanged: 0
   _cookStatus: 0
   _lastCookResult: 0
   _isCookingAssetReloaded: 0
@@ -588,6 +589,7 @@ MonoBehaviour:
   _paintMergeMode: 0
   _showOnlyEditGeometry: 1
   _alwaysCookUpstream: 1
+  _paintMeshVisiblity: 0
 --- !u!43 &898907806
 Mesh:
   m_ObjectHideFlags: 0

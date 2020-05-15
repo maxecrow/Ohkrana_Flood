@@ -13,7 +13,7 @@ public class Drive : MonoBehaviour
     public float maxBrakeTorque = 5000;
 
     public AudioSource skidSound;
-    public AudioSource highAccel;
+    //public AudioSource highAccel;
 
 
     public Transform SkidTrailPrefab;
@@ -80,42 +80,42 @@ public class Drive : MonoBehaviour
         brakeLightL.SetActive(false);
         brakeLightR.SetActive(false);
 
-        GameObject playerName = Instantiate(playerNamePrefab);
-        playerName.GetComponent<NameUIController>().target = rb.gameObject.transform;
+        //GameObject playerName = Instantiate(playerNamePrefab);
+        //playerName.GetComponent<NameUIController>().target = rb.gameObject.transform;
 
-        if (this.GetComponent<AIController>().enabled)
-            playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)];
-        else
-            playerName.GetComponent<Text>().text = "Human";
+        //if (this.GetComponent<AIController>().enabled)
+        //    playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)];
+        //else
+        //    playerName.GetComponent<Text>().text = "Human";
 
-        playerName.GetComponent<NameUIController>().carRend = jeepMesh;
+        //playerName.GetComponent<NameUIController>().carRend = jeepMesh;
     }
 
 
-    public void CalculateEngineSound()
-    {
-        float gearPercentage = (1 / (float)numGears);
-        float targetGearFactor = Mathf.InverseLerp(gearPercentage * currentGear, gearPercentage * (currentGear + 1), Mathf.Abs(currentSpeed / maxSpeed));
+    //public void CalculateEngineSound()
+    //{
+    //    float gearPercentage = (1 / (float)numGears);
+    //    float targetGearFactor = Mathf.InverseLerp(gearPercentage * currentGear, gearPercentage * (currentGear + 1), Mathf.Abs(currentSpeed / maxSpeed));
 
-        currentGearPerc = Mathf.Lerp(currentGearPerc, targetGearFactor, Time.deltaTime * 5f);
+    //    currentGearPerc = Mathf.Lerp(currentGearPerc, targetGearFactor, Time.deltaTime * 5f);
 
-        var gearNumFactor = currentGear / (float)numGears;
-        rpm = Mathf.Lerp(gearNumFactor, 1, currentGearPerc);
+    //    var gearNumFactor = currentGear / (float)numGears;
+    //    rpm = Mathf.Lerp(gearNumFactor, 1, currentGearPerc);
 
-        float speedPercentage = Mathf.Abs(currentSpeed / maxSpeed);
-        float upperGearMax = (1 / (float)numGears) * (currentGear + 1);
-        float downGearMax = (1 / (float)numGears) * currentGear;
+    //    float speedPercentage = Mathf.Abs(currentSpeed / maxSpeed);
+    //    float upperGearMax = (1 / (float)numGears) * (currentGear + 1);
+    //    float downGearMax = (1 / (float)numGears) * currentGear;
 
-        if (currentGear > 0 && speedPercentage < downGearMax)
-            currentGear--;
+    //    if (currentGear > 0 && speedPercentage < downGearMax)
+    //        currentGear--;
 
-        if (speedPercentage > upperGearMax && (currentGear < (numGears - 1)))
-            currentGear++;
+    //    if (speedPercentage > upperGearMax && (currentGear < (numGears - 1)))
+    //        currentGear++;
 
-        float pitch = Mathf.Lerp(lowPitch, highPitch, rpm);
-        highAccel.pitch = Mathf.Min(highPitch, pitch) * 0.25f;
+    //    float pitch = Mathf.Lerp(lowPitch, highPitch, rpm);
+    //    highAccel.pitch = Mathf.Min(highPitch, pitch) * 0.25f;
 
-    }
+    //}
 
     public void Go(float accel, float steer, float brake)
     {

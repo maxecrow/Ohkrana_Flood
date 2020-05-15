@@ -89,11 +89,6 @@
     <Compile Include="Assets\OK_FL\Level_01\Scripts\PauseScreen\PauseScreen.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\PlayerController.cs" />
     <Compile Include="Assets\OK_FL\Level_01\Scripts\RaceMonitor.cs" />
-    <Compile Include="Assets\OK_FL\Level_01\Scripts\Temp\AIController 5.cs" />
-    <Compile Include="Assets\OK_FL\Level_01\Scripts\Temp\AIController_compare.cs" />
-    <Compile Include="Assets\OK_FL\Level_01\Scripts\Temp\AiControllerOld.cs" />
-    <Compile Include="Assets\OK_FL\Level_01\Scripts\Temp\AltAIController.cs" />
-    <Compile Include="Assets\OK_FL\Level_01\Scripts\Temp\SmoothFollow.cs" />
     <Compile Include="Assets\OK_FL\Menu\Scripts\MainMenu.cs" />
     <Compile Include="Assets\OK_FL\Menu\Scripts\menuAwake.cs" />
     <Compile Include="Assets\OK_FL\Muscle_car_tests\Scripts\Drive_old.cs" />

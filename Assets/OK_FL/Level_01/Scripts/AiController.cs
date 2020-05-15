@@ -26,6 +26,7 @@ public class AiController : MonoBehaviour
     float lastTimeMoving = 0;
 
     CheckPointManager cpm;
+
     
 
 
@@ -195,7 +196,7 @@ public class AiController : MonoBehaviour
 
         ds.CheckForSkid();
 
-        ds.CalculateEngineSound();
+        //ds.CalculateEngineSound();
 
         
     }

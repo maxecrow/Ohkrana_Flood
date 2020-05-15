@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         ds.CheckForSkid();
 
-        ds.CalculateEngineSound();
+        //ds.CalculateEngineSound();
 
     }
 }

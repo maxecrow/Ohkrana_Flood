@@ -14,6 +14,9 @@ public class CountDownManager : MonoBehaviour
     public GameManager gm;
     public GameObject player;
     
+
+    public bool thislevelisover;
+
     [SerializeField] private float timeLimit = 4f;
     
     //[SerializeField] private GameObject title;
@@ -29,7 +32,7 @@ public class CountDownManager : MonoBehaviour
 
     private float timer;
     //private bool canCount = true;
-    private bool doOnce = false;
+    //private bool doOnce = false;
     //private bool islap = false;
     //private bool isWon = false;
     
@@ -42,7 +45,9 @@ public class CountDownManager : MonoBehaviour
         timer = timeLimit;
         gameLooseUI.SetActive(false);
         gameWinUI.SetActive(false);
-        
+        thislevelisover = false;
+        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<AiController>().enabled = false;
         //txt_YouLoose.text = "";
 
     }
@@ -59,21 +64,22 @@ public class CountDownManager : MonoBehaviour
                         
             //...and show the Game Over UI
             gameWinUI.SetActive(true);
+            thislevelisover = true;
 
-            
         }
 
 
         else if (timer <= 0.0f && !gm.isGameOver)
         {
             //canCount = false;
-            doOnce = true;
+            //doOnce = true;
 
             timer = 0.0f;
             //...and show the Game Over UI
             gameLooseUI.SetActive(true);
             player.GetComponent<PlayerController>().enabled =false;
             player.GetComponent<AiController>().enabled = true;
+            thislevelisover = true;
         }
 
 
@@ -91,6 +97,7 @@ public class CountDownManager : MonoBehaviour
         currentLapText.text = currentLap + "/" + numberOfLaps;
     }
 
+    
     
     
        

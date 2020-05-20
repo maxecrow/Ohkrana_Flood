@@ -11,7 +11,7 @@ public class Drive : MonoBehaviour
     public float torque = 200f;
     public float maxSteerAngle = 30;
     public float maxBrakeTorque = 5000;
-
+    public bool isHit;
     public AudioSource skidSound;
     //public AudioSource highAccel;
 
@@ -24,6 +24,9 @@ public class Drive : MonoBehaviour
 
     public GameObject brakeLightL;
     public GameObject brakeLightR;
+
+    //FMOD Audio
+    FMODPLayer FMODPLayer;
 
     // gear Audio System
     public Rigidbody rb;
@@ -219,6 +222,10 @@ public class Drive : MonoBehaviour
             return;
         }
     }
+
+   
+
+
 }
 
 

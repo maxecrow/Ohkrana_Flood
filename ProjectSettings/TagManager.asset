@@ -8,6 +8,7 @@ TagManager:
   - HUD
   - CheckPoint
   - PlayerSensor
+  - droid
   layers:
   - Default
   - TransparentFX

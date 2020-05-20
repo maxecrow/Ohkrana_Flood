@@ -146,6 +146,10 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         //Restart the scene by loading the scene that is currently loaded
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene());
+
+
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -11,9 +11,9 @@ public class Drive : MonoBehaviour
     public float torque = 200f;
     public float maxSteerAngle = 30;
     public float maxBrakeTorque = 5000;
-    public bool isHit;
+
     public AudioSource skidSound;
-    //public AudioSource highAccel;
+    public AudioSource highAccel;
 
 
     public Transform SkidTrailPrefab;
@@ -24,9 +24,6 @@ public class Drive : MonoBehaviour
 
     public GameObject brakeLightL;
     public GameObject brakeLightR;
-
-    //FMOD Audio
-    FMODPLayer FMODPLayer;
 
     // gear Audio System
     public Rigidbody rb;
@@ -95,30 +92,30 @@ public class Drive : MonoBehaviour
     }
 
 
-    //public void CalculateEngineSound()
-    //{
-    //    float gearPercentage = (1 / (float)numGears);
-    //    float targetGearFactor = Mathf.InverseLerp(gearPercentage * currentGear, gearPercentage * (currentGear + 1), Mathf.Abs(currentSpeed / maxSpeed));
+    public void CalculateEngineSound()
+    {
+        float gearPercentage = (1 / (float)numGears);
+        float targetGearFactor = Mathf.InverseLerp(gearPercentage * currentGear, gearPercentage * (currentGear + 1), Mathf.Abs(currentSpeed / maxSpeed));
 
-    //    currentGearPerc = Mathf.Lerp(currentGearPerc, targetGearFactor, Time.deltaTime * 5f);
+        currentGearPerc = Mathf.Lerp(currentGearPerc, targetGearFactor, Time.deltaTime * 5f);
 
-    //    var gearNumFactor = currentGear / (float)numGears;
-    //    rpm = Mathf.Lerp(gearNumFactor, 1, currentGearPerc);
+        var gearNumFactor = currentGear / (float)numGears;
+        rpm = Mathf.Lerp(gearNumFactor, 1, currentGearPerc);
 
-    //    float speedPercentage = Mathf.Abs(currentSpeed / maxSpeed);
-    //    float upperGearMax = (1 / (float)numGears) * (currentGear + 1);
-    //    float downGearMax = (1 / (float)numGears) * currentGear;
+        float speedPercentage = Mathf.Abs(currentSpeed / maxSpeed);
+        float upperGearMax = (1 / (float)numGears) * (currentGear + 1);
+        float downGearMax = (1 / (float)numGears) * currentGear;
 
-    //    if (currentGear > 0 && speedPercentage < downGearMax)
-    //        currentGear--;
+        if (currentGear > 0 && speedPercentage < downGearMax)
+            currentGear--;
 
-    //    if (speedPercentage > upperGearMax && (currentGear < (numGears - 1)))
-    //        currentGear++;
+        if (speedPercentage > upperGearMax && (currentGear < (numGears - 1)))
+            currentGear++;
 
-    //    float pitch = Mathf.Lerp(lowPitch, highPitch, rpm);
-    //    highAccel.pitch = Mathf.Min(highPitch, pitch) * 0.25f;
+        float pitch = Mathf.Lerp(lowPitch, highPitch, rpm);
+        highAccel.pitch = Mathf.Min(highPitch, pitch) * 0.25f;
 
-    //}
+    }
 
     public void Go(float accel, float steer, float brake)
     {
@@ -222,11 +219,4 @@ public class Drive : MonoBehaviour
             return;
         }
     }
-
-   
-
-
 }
-
-
-    

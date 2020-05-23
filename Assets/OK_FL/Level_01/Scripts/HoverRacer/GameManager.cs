@@ -74,6 +74,11 @@ public class GameManager : MonoBehaviour
             lapTimes[currentLap] += Time.deltaTime;
             UpdateUI_LapTime();
         }
+
+        if (Input.GetKeyDown("escape"))
+        {
+            QuitGame();
+        }
     }
 
     //Called by the FinishLine script
@@ -151,5 +156,10 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

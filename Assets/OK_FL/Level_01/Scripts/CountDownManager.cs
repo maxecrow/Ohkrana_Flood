@@ -13,8 +13,8 @@ public class CountDownManager : MonoBehaviour
     public GameObject gameLooseUI;           //A reference to the UI objects that appears when the game is complete
     public GameManager gm;
     public GameObject player;
-    
 
+    //public static int playerScore;  //  Static keyword makes this variable a Member of the class, not of any particular instance.
     public bool thislevelisover;
 
     [SerializeField] private float timeLimit = 4f;
@@ -30,7 +30,7 @@ public class CountDownManager : MonoBehaviour
     // if time counter = 0 (canCount = false) && islap = true then menu is WIN!
     // else if time counter = 0 (canCount = false) && islap = false then menu is LOOSE!
 
-    private float timer;
+    public float timer;
     //private bool canCount = true;
     //private bool doOnce = false;
     //private bool islap = false;
@@ -54,7 +54,7 @@ public class CountDownManager : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         timer -= Time.deltaTime;
         DeltaTimeDisplay.text = timer.ToString("F");
@@ -65,6 +65,7 @@ public class CountDownManager : MonoBehaviour
             //...and show the Game Over UI
             gameWinUI.SetActive(true);
             thislevelisover = true;
+            DisablePlayer();
 
         }
 
@@ -77,9 +78,9 @@ public class CountDownManager : MonoBehaviour
             timer = 0.0f;
             //...and show the Game Over UI
             gameLooseUI.SetActive(true);
-            player.GetComponent<PlayerController>().enabled =false;
-            player.GetComponent<AiController>().enabled = true;
-            thislevelisover = true;
+            DisablePlayer();
+            
+            
         }
 
 
@@ -98,7 +99,12 @@ public class CountDownManager : MonoBehaviour
     }
 
     
-    
+    void DisablePlayer()
+    {
+        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<AiController>().enabled = true;
+        thislevelisover = true;
+    }
     
        
 }

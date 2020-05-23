@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         ds.Go(a, s, b);
 
-        ds.CheckForSkid();
+        //ds.CheckForSkid();
 
         //ds.CalculateEngineSound();
 
